@@ -1958,19 +1958,17 @@
       {"name":"miclock2.app.js","url":"clock-mixed.js"},
       {"name":"miclock2.img","url":"clock-mixed-icon.js","evaluate":true}
     ]
+  },
+  { "id": "timer",
+    "name": "My Timer App",
+    "shortName":"My Timer",
+    "icon": "app.png",
+    "version":"0.01",
+    "description": "This is a description of my awesome timer app",
+    "tags": "",
+    "storage": [
+      {"name":"timer.app.js","url":"app.js"},
+      {"name":"timer.img","url":"app-icon.js","evaluate":true}
+    ]
   }
-]
-},
-{ "id": "timer",
-  "name": "My Timer App",
-  "shortName":"My Timer",
-  "icon": "app.png",
-  "version":"0.01",
-  "description": "This is a description of my awesome timer app",
-  "tags": "",
-  "storage": [
-    {"name":"timer.app.js","url":"app.js"},
-    {"name":"timer.img","url":"app-icon.js","evaluate":true}
-  ]
-}
 ]
