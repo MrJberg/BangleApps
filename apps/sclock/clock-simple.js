@@ -12,6 +12,7 @@ const yposGMT = 220;
 
 // Timer interval
 var timeInterval;
+const refreshInterval = 1000;
 
 // Check settings for what type our clock should be
 var is12Hour = (require("Storage").readJSON("setting.json",1)||{})["12hour"];
@@ -72,7 +73,7 @@ Bangle.on('lcdPower', function(on) {
   }
   if (on) {
     drawSimpleClock();
-    timeInterval = setInterval(showTime, 5000);
+    timeInterval = setInterval(showTime, refreshInterval);
   }
 });
 
@@ -82,7 +83,7 @@ Bangle.loadWidgets();
 Bangle.drawWidgets();
 
 // refesh every 5 sec
-timeInterval = setInterval(drawSimpleClock, 5000);
+timeInterval = setInterval(drawSimpleClock, refreshInterval);
 
 // draw now
 drawSimpleClock();
