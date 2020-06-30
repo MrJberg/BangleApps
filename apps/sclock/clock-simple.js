@@ -10,6 +10,9 @@ const yposDate = 130;
 const yposYear = 175;
 const yposGMT = 220;
 
+// Timer interval
+var timeInterval;
+
 // Check settings for what type our clock should be
 var is12Hour = (require("Storage").readJSON("setting.json",1)||{})["12hour"];
 
@@ -63,7 +66,14 @@ function drawSimpleClock() {
 
 // handle switch display on by pressing BTN1
 Bangle.on('lcdPower', function(on) {
-  if (on) drawSimpleClock();
+  if (timeInterval) {
+    clearInterval(timeInterval);
+    timeInterval = undefined;
+  }
+  if (on) {
+    drawSimpleClock();
+    timeInterval = setInterval(showTime, 5E3);
+  }
 });
 
 // clean app screen
@@ -71,8 +81,8 @@ g.clear();
 Bangle.loadWidgets();
 Bangle.drawWidgets();
 
-// refesh every 15 sec
-setInterval(drawSimpleClock, 15E3);
+// refesh every 5 sec
+timeInterval = setInterval(drawSimpleClock, 5E3);
 
 // draw now
 drawSimpleClock();
