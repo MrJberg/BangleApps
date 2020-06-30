@@ -173,7 +173,7 @@ function showTime() {
           ("0"+d.getMinutes()).substr(-2);
   var l = lastTime;
   // same - don't animate
-  if (t==l || l=="-----") {
+  if (t==l) {// || l=="-----") {
     drawDigits(l,t,0);
     drawEverythingElse();
     lastTime = t;
