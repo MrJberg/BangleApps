@@ -72,7 +72,7 @@ Bangle.on('lcdPower', function(on) {
   }
   if (on) {
     drawSimpleClock();
-    timeInterval = setInterval(showTime, 5E3);
+    timeInterval = setInterval(showTime, 5000);
   }
 });
 
@@ -82,7 +82,7 @@ Bangle.loadWidgets();
 Bangle.drawWidgets();
 
 // refesh every 5 sec
-timeInterval = setInterval(drawSimpleClock, 5E3);
+timeInterval = setInterval(drawSimpleClock, 5000);
 
 // draw now
 drawSimpleClock();
