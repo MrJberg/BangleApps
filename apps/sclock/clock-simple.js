@@ -12,7 +12,7 @@ const yposGMT = 220;
 
 // Timer interval
 var timeInterval;
-const refreshInterval = 1000;
+const refreshInterval = 1500;
 
 // Check settings for what type our clock should be
 var is12Hour = (require("Storage").readJSON("setting.json",1)||{})["12hour"];
